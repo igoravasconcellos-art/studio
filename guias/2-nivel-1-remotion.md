@@ -47,8 +47,11 @@ O Claude conduz estas fases na ordem e **para nos pontos de aprovação**.
 2. **Tempo por palavra (local e gratuito):**
    `python tools/transcrever.py "<vídeo>" "<projeto>/transcricao"`
    Gera `palavras.json` (início e fim de cada palavra) e `transcript.md`.
-3. Nomes próprios mal transcritos podem ser corrigidos no texto ("cloud" → Claude) sem mexer nos tempos.
-4. Com o conteúdo entendido, a pasta ganha um nome descritivo: `001. meu-video`.
+3. **Zona do rosto (obrigatória se a câmera vai encolher):** um quadro por segundo do vídeo inteiro, com uma caixa candidata desenhada, numa prancha:
+   `ffmpeg -i "<vídeo>" -vf "fps=1,drawbox=x=680:y=70:w=530:h=690:c=cyan:t=6,scale=320:-1,tile=10x6" "<projeto>/frames/sheet_rosto.jpg"`
+   Ajuste a caixa até a cabeça inteira (cabelo, orelhas, queixo) ficar dentro dela em **todos** os quadros. Essa caixa é a zona do rosto `{x0, y0, x1, y1}` do plano. Um quadro só não basta: a pessoa se mexe dezenas de pixels para os lados.
+4. Nomes próprios mal transcritos podem ser corrigidos no texto ("cloud" → Claude) sem mexer nos tempos.
+5. Com o conteúdo entendido, a pasta ganha um nome descritivo: `001. meu-video`.
 
 ### 3. Planejar (ponto de aprovação)
 
@@ -59,7 +62,7 @@ O Claude escreve `plano.md` usando a [direção editorial](5-direcao-editorial.m
 - cenas do repertório que entram (e as que ficam de fora, com o porquê) e a curva de energia;
 - para vídeos com mais de ~3 min: mapa macro (blocos e cena dominante de cada um);
 - tabela: `# | início–fim | cena | entrada | gatilho (palavra @ tempo) | visual | print usado`;
-- zona do rosto a preservar, tirada dos quadros reais.
+- zona do rosto `{x0, y0, x1, y1}` medida na prancha, e a tabela de formatos de card com a escala do vídeo e a região visível de cada um.
 
 Veja um plano real em [projetos/000. exemplo/plano.md](../projetos/000.%20exemplo/plano.md).
 
@@ -71,6 +74,8 @@ Veja um plano real em [projetos/000. exemplo/plano.md](../projetos/000.%20exempl
 - Os arquivos de `projetos/` são acessados com `staticFile('<NNN. nome>/...')` (a pasta `projetos` é a pasta pública do Remotion).
 - **Vídeo completo:** uma única instância contínua de `<Video>` com o master; a câmera muda de tamanho e lugar animando o contêiner, nunca reiniciando o vídeo. Dimensões e fps herdados do master.
 - **Tela dividida:** use sempre `src/_shared/synchronized-split.tsx`. Ele garante que câmera e painel entrem e saiam juntos. O `npm run typecheck` bloqueia splits feitos à mão.
+- **Câmera em card:** a posição e a escala do vídeo dentro do card vêm de `enquadrarRosto(card, zonaDoRosto)` (reexportado pelo `synchronized-split.tsx`, passe o resultado em `splitVideoX/Y/Scale`). Ela **reduz o vídeo** dentro do card até a zona do rosto caber com margem, sem borda preta, e dá erro se o formato não comporta o rosto. Formatos prontos em `FORMATOS_CARD`: `vertical` 560×870, `horizontal` 16:9 860×484, `quadrado` 620×620, `mini` 360×450, todos com borda arredondada, e `meia` 1160×1080 (altura total, colada à direita de uma faixa de painel de 760 px, sem borda; ver `MEIA_TELA` em `src/estilos/papel-recortado.tsx`). Varie o formato ao longo do vídeo conforme a fala; o `npm run typecheck` testa todos com um rosto de referência.
+- Cards e painéis que entram ao lado da câmera só aparecem quando a câmera já está ~70% da transição; antes disso eles cobrem o rosto, que ainda está grande.
 - Toda animação depende de `useCurrentFrame()`. Nada de transições ou animações CSS.
 - Tempos definidos em segundos (vindos do `palavras.json`) e convertidos com o fps.
 - `<Sequence premountFor={fps}>` em toda cena com tempo definido.
@@ -80,7 +85,7 @@ Veja um plano real em [projetos/000. exemplo/plano.md](../projetos/000.%20exempl
 ### 5. Conferir (ponto de aprovação)
 
 1. `npm run typecheck`.
-2. Stills (quadros parados) no início, no meio e no fim de cada mudança de layout:
+2. Stills (quadros parados) no início, no meio e no fim de cada mudança de layout, incluindo **o meio de cada transição da câmera** e pelo menos um still de cada formato de card:
    `npx remotion still src/index.ts <Composicao> edicoes/<NNN. nome>/stills/q0450.png --frame=450`
 3. O Claude revisa: rosto coberto? texto legível? borda preta? print cortado? marca-texto no lugar? E mostra os stills principais para você aprovar antes do render.
 4. Você também pode assistir tudo em tempo real com `npm run studio` (abre no navegador).

@@ -34,7 +34,7 @@ Quando a pessoa não souber o que pedir, ofereça opções concretas, poucas por
 - **Formato:** horizontal 16:9 (YouTube), vertical 9:16 (Reels, TikTok, Shorts), quadrado.
 - **Estilo:** mostre a [galeria](estilos/README.md) e cite 2–3 estilos que combinam com o assunto do vídeo. Lembre que ela pode trazer referências próprias em `prints/`.
 - **Intensidade:** sutil (quase só câmera), equilibrada, dominante (muita coisa na tela).
-- **Recursos:** prints com zoom e marca-texto, tela dividida, câmera em card, legendas dinâmicas, contadores e gráficos, fluxos que se montam, tipografia grande, B-roll gerado (Nível 2).
+- **Recursos:** prints com zoom e marca-texto, tela dividida, câmera em card (vertical, 16:9, quadrado, mini ou meia tela, bordas arredondadas ou "colada" com borda branca e fita, variando ao longo do vídeo), legendas dinâmicas, contadores e gráficos, fluxos que se montam, tipografia grande, B-roll gerado (Nível 2).
 - **Trecho:** o vídeo inteiro, só a abertura, só um trecho.
 
 Depois de assistir o vídeo, **proponha você mesmo** duas ou três direções ("este vídeo tem cara de aula: sugiro tela dividida nos blocos 2 e 4 e câmera limpa no resto"). Não espere a pessoa adivinhar.
@@ -54,7 +54,7 @@ Depois de assistir o vídeo, **proponha você mesmo** duas ou três direções (
 1. **O vídeo gravado é intocável** (`locked-final-cut`): não cortar, reordenar, acelerar, trocar áudio, recomprimir, sobrescrever ou apagar. A edição é composição por cima. Áudio original uma única vez; duração final igual à do master (±1 quadro).
 2. **Dois arquivos de vídeo = duas edições independentes.** Só concatene com pedido explícito.
 3. **Tempo por palavra:** todo gatilho vem do `palavras.json`. Conteúdo nunca aparece antes de ser dito.
-4. **Rosto livre:** nada cobre olhos, boca ou contorno do rosto. A posição do rosto vem dos quadros reais.
+4. **Rosto livre:** nada cobre olhos, boca ou contorno do rosto. A posição do rosto vem dos quadros reais: meça a **zona do rosto** (união das caixas em 1 quadro por segundo do vídeo inteiro) e calcule todo card de câmera com `enquadrarRosto` (`src/_shared/enquadramento.ts`). Nunca recorte a câmera em escala 1 com deslocamento fixo: foi isso que cortou o rosto no projeto 001.
 5. **Prints íntegros** e marca-texto exatamente sobre a frase citada.
 6. **Sem texto dentro de imagens geradas por IA.** Todo texto entra na montagem.
 7. **Nunca apague** vídeos, prints ou qualquer arquivo que você não criou. Apague só os seus intermediários.
@@ -72,8 +72,8 @@ projetos/<NNN. slug>/     video/ · prints/ · frames/ · transcricao/ · hf/ ·
 edicoes/<NNN. slug>/      somente entregáveis finais
 src/Root.tsx              registro das composições do Remotion
 src/videos/<slug>/        código de cada vídeo (Nível 1 e Nível 2 caminho B)
-src/estilos/              exemplos da galeria, rodam sem vídeo
-src/_shared/              primitivas: synchronized-split.tsx (obrigatória em telas divididas), metadata.ts
+src/estilos/              exemplos da galeria, rodam sem vídeo; papel-recortado.tsx e claude-code.tsx são peças reutilizáveis
+src/_shared/              primitivas: synchronized-split.tsx (obrigatória em telas divididas), enquadramento.ts (cards de câmera a partir da zona do rosto), metadata.ts
 tools/transcrever.py      transcrição local com tempo por palavra (faster-whisper, gratuito)
 tools/hf_api.py           geração pela Higgsfield Cloud API (Nível 2, caminho B)
 ```

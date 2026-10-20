@@ -186,6 +186,10 @@ exact paper-cut style, colors and soft lighting, no new objects, no text.
 
 Transformação com `start_image` + `end_image`: `The documents lift off the desk one by one and fly away out of frame like paper leaves in a gentle breeze, leaving the desk clean; the timer and the cup stay in place. Static overhead camera.`
 
+### Papel recortado leve (projeto 003)
+
+Variação mais limpa: a montagem no Remotion faz o papel (fundo creme com grão, folhas com borda de tesoura, texto 3D, câmera colada) e a Higgsfield entra só com 1–3 ilustrações-chave da metáfora, em papel recortado plano e sem diorama pesado. Prompt base: `Layered paper-cut craft illustration, [cena], handmade cut paper layers with soft drop shadows and visible paper fiber texture, warm muted palette: cream #F0EEE6, terracotta #D97757, sage green #788C5D, ivory. Calm editorial look, generous empty space on the left third. No text, no letters, no logos, no people.` Animação: Kling 3.0 pro, 5 s, `Stop-motion paper-cut animation. [ação]. Layered parallax, paper texture preserved, same colors, no new objects, no text.` O espaço vazio à esquerda recebe o texto da montagem.
+
 ### Cinematográfico escuro (B-roll realista)
 
 ```
@@ -201,7 +205,7 @@ Gere as imagens direto em 9:16 (não recorte de 16:9). Mantenha o assunto princi
 
 ## 7. Checklist
 
-- [ ] quadros lidos, rosto e fundo mapeados
+- [ ] quadros lidos, fundo mapeado e zona do rosto medida em 1 quadro por segundo (cards de câmera reduzem o vídeo para o rosto caber, nunca recortam)
 - [ ] `palavras.json` gerado e conferido
 - [ ] suas orientações refletidas no plano
 - [ ] custo estimado aprovado antes de gerar

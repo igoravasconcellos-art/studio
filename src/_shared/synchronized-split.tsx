@@ -6,6 +6,8 @@ const clamp = {
   extrapolateRight: 'clamp',
 } as const;
 
+export {FORMATOS_CARD, enquadrarRosto, type ZonaRosto} from './enquadramento';
+
 export type SynchronizedSplitConfig = {
   canvasWidth?: number;
   canvasHeight?: number;
@@ -16,6 +18,7 @@ export type SynchronizedSplitConfig = {
   splitCameraRadius?: number;
   splitVideoX?: number;
   splitVideoY?: number;
+  splitVideoScale?: number;
   panelGap?: number;
   panelTravel?: number;
 };
@@ -34,6 +37,7 @@ export type SynchronizedSplitState = {
   video: {
     x: number;
     y: number;
+    scale: number;
   };
   panel: {
     visibleWidth: number;
@@ -67,6 +71,7 @@ export const getSynchronizedSplitState = (
     video: {
       x: interpolate(progress, [0, 1], [0, config.splitVideoX ?? -635], clamp),
       y: interpolate(progress, [0, 1], [0, config.splitVideoY ?? -70], clamp),
+      scale: interpolate(progress, [0, 1], [1, config.splitVideoScale ?? 1], clamp),
     },
     panel: {
       visibleWidth: Math.max(0, cameraLeft - panelGap),

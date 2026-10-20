@@ -33,12 +33,17 @@ Os nomes em `código` são os usados no plano de edição.
 | `camera` | câmera cheia, limpa | gancho, opinião, tese, conexão, respiro |
 | `camera-enfase` | câmera com push-in lento ou punch-in numa frase | frase-chave, pergunta retórica |
 | `camera-motion` | câmera cheia com um elemento por cima (chip, número, ícone, palavra) | reforçar um termo ou dado breve |
-| `camera-espaco` | câmera deslocada (escala 1,15–1,25) abrindo espaço para texto | pergunta ou frase em tipografia grande |
+| `camera-espaco` | câmera deslocada (escala 1,15–1,25) abrindo espaço para texto | pergunta ou frase em tipografia grande, só se a cabeça tiver folga no topo |
+| `meia-tela` | faixa de painel/papel à esquerda (~40%), câmera em altura total colada à direita (formato `meia`), sem ampliar | mesma função do `camera-espaco`, mais segura: o rosto fica inteiro |
 | `aula` | tela dividida: conteúdo à esquerda (~70%), câmera à direita (~30%) | conceito em etapas, fluxo, lista, comparação |
 | `demo` | print ou interface dominante, câmera em card que muda de canto | tutorial, demonstração de ferramenta |
 | `cena` | conteúdo em tela cheia, sem câmera | fluxo complexo, print que precisa ser lido, clímax da explicação |
 | `broll` | vídeo ou ilustração em tela cheia, fala continua por baixo | metáfora, virada, abertura de bloco |
 | `transformacao` | um elemento cresce até virar tela cheia, ou a câmera encolhe até virar card | mudanças que carregam significado |
+
+**Formatos da câmera em card.** A câmera pode encolher para formatos diferentes, sempre com borda arredondada: **vertical** (retrato, bom para conteúdo largo ao lado), **16:9** (horizontal, mostra o cenário), **quadrado**, **mini** (canto, quando o conteúdo domina) e **meia tela** (altura total, colada à direita de uma faixa de painel, sem borda arredondada; a variação "leve" da tela dividida para frases-chave em tipografia grande). Trocar de formato entre blocos dá ritmo sem precisar de efeito. Em todos, o vídeo é reduzido dentro do card para o rosto inteiro caber com margem; o rosto nunca é recortado para caber. Nunca amplie a câmera para abrir espaço de texto quando a cabeça está perto do topo do quadro: use a meia tela (foi o que cortou a cabeça no projeto 003, corrigido assim).
+
+**Acabamento do card.** Além da borda arredondada simples, existe a **câmera colada** do estilo papel recortado leve: borda branca de papel (~10 px) com sombra macia e um pedaço de fita no canto superior esquerdo, como uma foto colada na folha (`molduraColada` e `Fita` em `src/estilos/papel-recortado.tsx`).
 
 **Lado da câmera.** Nas telas divididas e no card, o padrão é **conteúdo à esquerda, câmera à direita**. Inverta só se o enquadramento do rosto, a legibilidade ou um pedido seu exigirem, e registre o motivo no plano.
 
@@ -128,7 +133,7 @@ Quando várias marcas aparecem no mesmo vídeo, prefira uma base neutra com acen
 Valem em todo vídeo, em qualquer estilo, porque são qualidade:
 
 1. **Tempo por palavra.** Todo gatilho usa o início exato da palavra no `palavras.json`.
-2. **Rosto livre.** Texto e elementos não cobrem olhos, boca ou contorno do rosto. A posição do rosto vem dos quadros reais do vídeo, nunca de um palpite.
+2. **Rosto livre.** Texto e elementos não cobrem olhos, boca ou contorno do rosto. A posição do rosto vem dos quadros reais do vídeo (1 por segundo, vídeo inteiro), nunca de um palpite ou de um quadro só. Nenhum card de câmera corta o rosto: se não cabe, o card muda de formato ou o vídeo é reduzido dentro dele.
 3. **Legibilidade.** Todo texto precisa ser lido na tela de um celular.
 4. **Sem texto dentro de imagens geradas por IA.** Todo texto entra na montagem.
 5. **Números como foram falados**, sem "correção" na tela.

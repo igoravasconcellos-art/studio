@@ -8,7 +8,7 @@ Na conversa, basta citar o nome do estilo em negrito.
 
 ## Exemplos que rodam no seu computador
 
-Estes cinco vêm com código em [src/estilos/](../src/estilos/). Abra `npm run studio` para vê-los em movimento. A silhueta cinza marca onde entra a **sua câmera**.
+Estes seis vêm com código em [src/estilos/](../src/estilos/). Abra `npm run studio` para vê-los em movimento. A silhueta cinza marca onde entra a **sua câmera**.
 
 ### Horizontal (16:9)
 
@@ -16,6 +16,8 @@ Estes cinco vêm com código em [src/estilos/](../src/estilos/). Abra `npm run s
 |---|---|
 | ![Minimal suíço](imagens/MinimalSuico.jpg) | ![Terminal técnico](imagens/TerminalTecnico.jpg) |
 | **Minimal suíço.** Fundo branco, tipografia pesada, grade e um único vermelho. Tela dividida com a câmera à direita, entrando junto com o painel. Bom para aulas e passo a passo. | **Terminal técnico.** Fundo escuro com grade fina, fonte mono, texto digitado em tempo real, câmera em card com brilho. Bom para programação, IA e ferramentas. |
+| ![Papel recortado leve](imagens/PapelRecortadoLeve.jpg) | |
+| **Papel recortado leve.** Aula em papel creme nas cores do Claude: folhas com borda de tesoura, fita terracota, texto 3D de papel, câmera **colada** com borda branca e fita, e a variação **meia tela**. Peças prontas em `src/estilos/papel-recortado.tsx` e recriação do Claude Code em `src/estilos/claude-code.tsx`. Bom para aulas de IA e ferramentas. | |
 
 ### Vertical (9:16) para Reels, TikTok e Shorts
 
@@ -47,6 +49,8 @@ Quadros reais de vídeos editados com este fluxo no canal **Macks Wendhell | Int
 | **Papel recortado.** B-roll gerado na Higgsfield como diorama de papel, sem texto; os chips entram na montagem. | **Papel creme em aula.** Painel creme à esquerda, câmera à direita (70/30), cards que se montam com a fala. |
 | ![Cinematográfico escuro](imagens/cinematico-escuro.jpg) | |
 | **Cinematográfico escuro.** B-roll realista, luz baixa, tipografia discreta. | |
+| ![Papel recortado leve, aula](imagens/papel-recortado-leve.jpg) | ![Meia tela](imagens/meia-tela.jpg) |
+| **Papel recortado leve (projeto 003, harness).** Diagrama que se monta com a fala, cards com o Claude Code recriado, câmera colada em card quadrado. Ilustrações do cavalo geradas na Higgsfield no mesmo papel. | **Meia tela.** Faixa de papel à esquerda com texto 3D, câmera em altura total colada à direita, sem ampliar. Variação da tela dividida para frases-chave. |
 
 ---
 

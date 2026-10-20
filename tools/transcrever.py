@@ -9,9 +9,11 @@ Tenta a placa de vídeo (CUDA) e, se não houver, usa o processador sozinho.
 """
 
 import json
+import subprocess
 import sys
 from pathlib import Path
 
+import numpy as np
 from faster_whisper import WhisperModel
 
 MODELO = "large-v3-turbo"
@@ -22,12 +24,20 @@ def mmss(t):
     return f"{int(t // 60):02d}:{t % 60:06.3f}"
 
 
+def decodificar(fonte):
+    # ffmpeg em vez do PyAV: o PyAV 15+ quebrou o decode_audio do faster-whisper
+    pcm = subprocess.run(["ffmpeg", "-v", "error", "-i", str(fonte), "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+
+
 def transcrever(fonte, idioma):
     erros = []
+    audio = decodificar(fonte)
     for device, compute in DISPOSITIVOS:
         try:
             m = WhisperModel(MODELO, device=device, compute_type=compute)
-            segs, info = m.transcribe(str(fonte), language=idioma, word_timestamps=True, vad_filter=True)
+            segs, info = m.transcribe(audio, language=idioma, word_timestamps=True, vad_filter=True)
             # o gerador só decodifica aqui; erros de CUDA/CUBLAS aparecem nesta linha
             return list(segs), info, device
         except Exception as e:
