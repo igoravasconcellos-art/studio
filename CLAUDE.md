@@ -72,7 +72,8 @@ projetos/<NNN. slug>/     video/ · prints/ · frames/ · transcricao/ · hf/ ·
 edicoes/<NNN. slug>/      somente entregáveis finais
 src/Root.tsx              registro das composições do Remotion
 src/videos/<slug>/        código de cada vídeo (Nível 1 e Nível 2 caminho B)
-src/estilos/              exemplos da galeria, rodam sem vídeo; papel-recortado.tsx e claude-code.tsx são peças reutilizáveis
+src/estilos/              exemplos da galeria, rodam sem vídeo; papel-recortado.tsx, claude-code.tsx e demo-tutorial/ são peças reutilizáveis
+skills/                   skills do Studio versionadas aqui (demo-tutorial: estilo de tutorial com o app reconstruído)
 src/_shared/              primitivas: synchronized-split.tsx (obrigatória em telas divididas), enquadramento.ts (cards de câmera a partir da zona do rosto), metadata.ts
 tools/transcrever.py      transcrição local com tempo por palavra (faster-whisper, gratuito)
 tools/hf_api.py           geração pela Higgsfield Cloud API (Nível 2, caminho B)

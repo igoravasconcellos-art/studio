@@ -8,7 +8,7 @@ Na conversa, basta citar o nome do estilo em negrito.
 
 ## Exemplos que rodam no seu computador
 
-Estes seis vêm com código em [src/estilos/](../src/estilos/). Abra `npm run studio` para vê-los em movimento. A silhueta cinza marca onde entra a **sua câmera**.
+Estes sete vêm com código em [src/estilos/](../src/estilos/). Abra `npm run studio` para vê-los em movimento. A silhueta cinza marca onde entra a **sua câmera**.
 
 ### Horizontal (16:9)
 
@@ -16,8 +16,8 @@ Estes seis vêm com código em [src/estilos/](../src/estilos/). Abra `npm run st
 |---|---|
 | ![Minimal suíço](imagens/MinimalSuico.jpg) | ![Terminal técnico](imagens/TerminalTecnico.jpg) |
 | **Minimal suíço.** Fundo branco, tipografia pesada, grade e um único vermelho. Tela dividida com a câmera à direita, entrando junto com o painel. Bom para aulas e passo a passo. | **Terminal técnico.** Fundo escuro com grade fina, fonte mono, texto digitado em tempo real, câmera em card com brilho. Bom para programação, IA e ferramentas. |
-| ![Papel recortado leve](imagens/PapelRecortadoLeve.jpg) | |
-| **Papel recortado leve.** Aula em papel creme nas cores do Claude: folhas com borda de tesoura, fita terracota, texto 3D de papel, câmera **colada** com borda branca e fita, e a variação **meia tela**. Peças prontas em `src/estilos/papel-recortado.tsx` e recriação do Claude Code em `src/estilos/claude-code.tsx`. Bom para aulas de IA e ferramentas. | |
+| ![Papel recortado leve](imagens/PapelRecortadoLeve.jpg) | ![Demo Tutorial](imagens/DemoTutorial.jpg) |
+| **Papel recortado leve.** Aula em papel creme nas cores do Claude: folhas com borda de tesoura, fita terracota, texto 3D de papel, câmera **colada** com borda branca e fita, e a variação **meia tela**. Peças prontas em `src/estilos/papel-recortado.tsx` e recriação do Claude Code em `src/estilos/claude-code.tsx`. Bom para aulas de IA e ferramentas. | **Demo Tutorial.** Você conduz uma demonstração do Claude desktop recriado fiel ao seu app: cursor, menus, digitação, zoom no que está sendo falado, câmera em card que troca de formato (vertical, 16:9, quadrada) e tela cheia na abertura e no fechamento. Peças em `src/estilos/demo-tutorial/`, fluxo na skill `demo-tutorial`. Bom para tutoriais de ferramentas e lançamentos de recursos. |
 
 ### Vertical (9:16) para Reels, TikTok e Shorts
 
