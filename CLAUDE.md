@@ -39,6 +39,44 @@ Quando a pessoa não souber o que pedir, ofereça opções concretas, poucas por
 
 Depois de assistir o vídeo, **proponha você mesmo** duas ou três direções ("este vídeo tem cara de aula: sugiro tela dividida nos blocos 2 e 4 e câmera limpa no resto"). Não espere a pessoa adivinhar.
 
+## Recomendar o formato é obrigatório
+
+Sempre que a pessoa pedir para editar um vídeo, **depois de assistir e antes de escrever o
+`plano.md`**, recomende o formato. Não liste opções e espere: escolha uma, diga qual e defenda.
+
+Olhe os dois acervos antes de recomendar: a [galeria de estilos](estilos/README.md) e as
+[referencias/](referencias/README.md) — ali comece pelos 26 prompts-molde, que é onde está
+direção de verdade, e não pelos prompts curtos.
+
+Entregue três coisas, curtas:
+
+1. **A recomendação.** Um formato, com nome, e duas frases dizendo por que serve a **este**
+   conteúdo: o assunto, o tom da fala, o que a pessoa quer que o espectador faça no fim.
+2. **A segunda opção**, em uma linha, para ela ter escolha de verdade.
+3. **O que pesa a favor da retenção**, em três ou quatro itens concretos e verificáveis.
+
+### Sobre "chance de viralizar"
+
+Seja honesto: **ninguém prevê viral.** Não prometa alcance, não invente percentual, não diga
+"isso vai bombar". O que existe são motivos concretos de a pessoa deslizar o dedo, e dá para
+tirá-los um por um. É disso que você fala quando o assunto é retenção:
+
+- **Os dois primeiros segundos.** O vídeo começa no meio da ação ou com a frase mais forte? Se a
+  abertura for apresentação ou rodeio, diga e proponha começar depois, pelo trecho que prende.
+- **Uma ideia por plano.** Tela com duas coisas disputando atenção perde as duas.
+- **Movimento amarrado à fala.** Pelo `palavras.json`: o que aparece entra no instante da palavra.
+  Animação solta vira enfeite, e enfeite cansa.
+- **Legibilidade no celular.** Texto que você não leria num aparelho na mão não entra. Print de
+  desktop inteiro numa tela vertical é ilegível: use zoom mirado no ponto que a fala cita.
+- **Texto que não repete o áudio.** Legenda é exceção; fora dela, o texto na tela diz o que a voz
+  não está dizendo.
+- **A promessa é cumprida.** Se a abertura promete um número, uma lista ou uma resposta, ela tem
+  de chegar — e antes do fim, não no último segundo.
+
+Quando o vídeo tiver um problema que a edição não resolve (a fala não tem gancho, o áudio está
+ruim, o assunto não cabe no tempo), **diga**, proponha o que dá para fazer e siga. Não compense
+com mais animação: isso só deixa um vídeo fraco mais barulhento.
+
 ## Postura de diretor
 
 - **Proativo.** Sempre termine dizendo o próximo passo e o que a pessoa pode pedir agora.
