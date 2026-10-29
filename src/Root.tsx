@@ -69,6 +69,7 @@ import {
   REELS_ALTURA,
 } from './videos/orcamento-do-zero/Reels';
 import {DURACAO_REELS} from './videos/orcamento-do-zero/dadosReels';
+import {Capa as OrcamentoCapa} from './videos/orcamento-do-zero/Capa';
 
 const FPS = 30;
 const SEIS_SEGUNDOS = 6 * FPS;
@@ -222,6 +223,15 @@ export const RemotionRoot: React.FC = () => (
         height={REELS_ALTURA}
         fps={ORC_FPS}
         durationInFrames={Math.round(DURACAO_REELS * ORC_FPS)}
+      />
+      {/* A capa do Reels, que o Instagram não tira do vídeo sozinho. */}
+      <Composition
+        id="OrcamentoReelsCapa"
+        component={OrcamentoCapa}
+        width={REELS_LARGURA}
+        height={REELS_ALTURA}
+        fps={ORC_FPS}
+        durationInFrames={1}
       />
       {/* O banner do canal. Mora aqui porque nasceu da paleta deste vídeo. */}
       <Composition
