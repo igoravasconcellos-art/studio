@@ -63,6 +63,12 @@ import {
   BANNER_LARGURA,
   BANNER_ALTURA,
 } from './videos/orcamento-do-zero/Banner';
+import {
+  Reels as OrcamentoReels,
+  REELS_LARGURA,
+  REELS_ALTURA,
+} from './videos/orcamento-do-zero/Reels';
+import {DURACAO_REELS} from './videos/orcamento-do-zero/dadosReels';
 
 const FPS = 30;
 const SEIS_SEGUNDOS = 6 * FPS;
@@ -207,6 +213,15 @@ export const RemotionRoot: React.FC = () => (
         fps={ORC_FPS}
         durationInFrames={1}
         defaultProps={{variante: 'tres-batidas' as const}}
+      />
+      {/* O corte vertical para o Instagram, que leva para o vídeo completo. */}
+      <Composition
+        id="OrcamentoReels"
+        component={OrcamentoReels}
+        width={REELS_LARGURA}
+        height={REELS_ALTURA}
+        fps={ORC_FPS}
+        durationInFrames={Math.round(DURACAO_REELS * ORC_FPS)}
       />
       {/* O banner do canal. Mora aqui porque nasceu da paleta deste vídeo. */}
       <Composition
