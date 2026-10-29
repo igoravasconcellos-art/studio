@@ -9,6 +9,9 @@ const passos = [
   ['Dependências do Remotion', 'npm install --no-audit --no-fund'],
   ['Transcrição local (faster-whisper)', `${python} -m pip install faster-whisper`],
   ['Skill remotion-best-practices', 'npx -y skills add remotion-dev/skills -s remotion-best-practices -a claude-code -y'],
+  // O pacote hyperframes vem pelo npm install acima; este passo traz as 4 skills do conjunto
+  // principal. Elas ficam em ~/.claude/skills (global), que é o único destino que o comando tem.
+  ['Skills do HyperFrames', 'npx -y hyperframes skills update'],
   // ponytail: falha aqui costuma ser "marketplace já cadastrado"; o passo seguinte revela erro real.
   ['Marketplace da skill watch', 'claude plugin marketplace add bradautomates/claude-video', true],
   ['Skill watch', 'claude plugin install watch@claude-video'],

@@ -14,7 +14,7 @@ Na primeira resposta da sessão, antes de qualquer outra coisa (a menos que a pe
    - **Nível 2: avançado, com Higgsfield.** Tudo do Nível 1, mais imagens e vídeos gerados por IA (B-rolls cinematográficos, ilustrações animadas, metáforas visuais) e montagem no editor da Higgsfield. Usa créditos da sua conta Higgsfield e precisa do conector conectado. Nada é gasto sem você aprovar o custo.
 
 2. Depois da escolha, **leia os guias do nível** antes de agir:
-   - Nível 1 → [guias/2-nivel-1-remotion.md](guias/2-nivel-1-remotion.md) e [guias/5-direcao-editorial.md](guias/5-direcao-editorial.md).
+   - Nível 1 → [guias/2-nivel-1-remotion.md](guias/2-nivel-1-remotion.md) e [guias/5-direcao-editorial.md](guias/5-direcao-editorial.md). Se for vídeo de educação financeira para o YouTube, leia antes o [guias/6-padrao-nalu.md](guias/6-padrao-nalu.md): o formato já está decidido.
    - Nível 2 → [guias/4-nivel-2-higgsfield.md](guias/4-nivel-2-higgsfield.md) e [guias/5-direcao-editorial.md](guias/5-direcao-editorial.md). No caminho B (API key), leia também o guia do Nível 1, porque a montagem é no Remotion.
 
 3. **Confira os pré-requisitos em silêncio** e resolva o que faltar:
@@ -104,7 +104,7 @@ com mais animação: isso só deixa um vídeo fraco mais barulhento.
 
 ```text
 CLAUDE.md                 este arquivo
-guias/                    1 primeiros passos · 2 nível 1 · 3 manual do Remotion · 4 nível 2 · 5 direção editorial
+guias/                    1 primeiros passos · 2 nível 1 · 3 manual do Remotion · 4 nível 2 · 5 direção editorial · 6 Padrão Nalu
 estilos/                  galeria de estilos (README.md + imagens/)
 referencias/              acervo de fora, para ampliar o cardápio de formatos (README.md explica)
 projetos/<NNN. slug>/     video/ · prints/ · frames/ · transcricao/ · hf/ · plano.md · edit.jsx

@@ -138,3 +138,8 @@ Valem em todo vídeo, em qualquer estilo, porque são qualidade:
 4. **Sem texto dentro de imagens geradas por IA.** Todo texto entra na montagem.
 5. **Números como foram falados**, sem "correção" na tela.
 6. **Prints íntegros** (seção 6).
+
+---
+
+Para os vídeos de educação financeira do canal, o formato já está fechado: veja o
+[Padrão Nalu](6-padrao-nalu.md). Este guia continua sendo o repertório geral.
