@@ -58,6 +58,11 @@ import {
   MINI_LARGURA,
   MINI_ALTURA,
 } from './videos/orcamento-do-zero/Miniatura';
+import {
+  Banner as CanalBanner,
+  BANNER_LARGURA,
+  BANNER_ALTURA,
+} from './videos/orcamento-do-zero/Banner';
 
 const FPS = 30;
 const SEIS_SEGUNDOS = 6 * FPS;
@@ -202,6 +207,15 @@ export const RemotionRoot: React.FC = () => (
         fps={ORC_FPS}
         durationInFrames={1}
         defaultProps={{variante: 'tres-batidas' as const}}
+      />
+      {/* O banner do canal. Mora aqui porque nasceu da paleta deste vídeo. */}
+      <Composition
+        id="CanalBanner"
+        component={CanalBanner}
+        width={BANNER_LARGURA}
+        height={BANNER_ALTURA}
+        fps={ORC_FPS}
+        durationInFrames={1}
       />
     </Folder>
   </>
