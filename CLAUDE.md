@@ -108,6 +108,7 @@ guias/                    1 primeiros passos · 2 nível 1 · 3 manual do Remoti
 estilos/                  galeria de estilos (README.md + imagens/)
 referencias/              acervo de fora, para ampliar o cardápio de formatos (README.md explica)
 projetos/<NNN. slug>/     video/ · prints/ · frames/ · transcricao/ · hf/ · plano.md · edit.jsx
+projetos/_sons/           biblioteca de efeitos sonoros (README.md explica cada um)
 edicoes/<NNN. slug>/      somente entregáveis finais
 src/Root.tsx              registro das composições do Remotion
 src/videos/<slug>/        código de cada vídeo (Nível 1 e Nível 2 caminho B)
